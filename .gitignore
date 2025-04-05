@@ -151,8 +151,10 @@ coverage*.xml
 coverage*.info
 
 # Visual Studio code coverage results
-*.coverage
-*.coveragexml
+**/*.coverage.*
+**/*.cobertura.xml
+**/coverage.json
+**/coverage-report/*
 
 # NCrunch
 _NCrunch_*
@@ -475,3 +477,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+.vscode/extensions.json

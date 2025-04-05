@@ -19,21 +19,7 @@ namespace common.Utils
                     if (originBoard[i][j] != targetBoard[i][j]) return false;
                 }
             }
-
             return true;
-        }
-
-        public static string PrintBoard(List<List<int>> boardState)
-        {
-            var lines = new List<string>();
-
-            foreach (var row in boardState)
-            {
-                var line = string.Join(" ", row);
-                lines.Add(line);
-            }
-
-            return string.Join("\n", lines);
         }
     }
 }

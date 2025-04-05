@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.Api", "src\GameO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "common", "common\common.csproj", "{AFABC918-FDAF-4C4C-9665-6CA3B8667C8C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CC5A1828-FB82-468A-9D99-FAE7C70A56E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "tests\IntegrationTests\IntegrationTests.csproj", "{17BDC683-72CE-46BD-B470-FD124BCED22B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{AFABC918-FDAF-4C4C-9665-6CA3B8667C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFABC918-FDAF-4C4C-9665-6CA3B8667C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFABC918-FDAF-4C4C-9665-6CA3B8667C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BDC683-72CE-46BD-B470-FD124BCED22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BDC683-72CE-46BD-B470-FD124BCED22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BDC683-72CE-46BD-B470-FD124BCED22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BDC683-72CE-46BD-B470-FD124BCED22B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17BDC683-72CE-46BD-B470-FD124BCED22B} = {CC5A1828-FB82-468A-9D99-FAE7C70A56E9}
 	EndGlobalSection
 EndGlobal
