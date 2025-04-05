@@ -1,4 +1,5 @@
 using GameOfLife.Api.Models;
+using static common.Utils.Utils;
 
 namespace GameOfLife.Api.Services
 {
@@ -13,9 +14,11 @@ namespace GameOfLife.Api.Services
 
         public List<List<int>> GetNextState(List<List<int>> currentState)
         {
+            if (currentState.Count == 0 || currentState[0].Count == 0)
+                return new List<List<int>>();
+
             int rows = currentState.Count;
             int cols = currentState[0].Count;
-
             var nextState = new List<List<int>>();
 
             for (int i = 0; i < rows; i++)
@@ -70,38 +73,22 @@ namespace GameOfLife.Api.Services
             return state;
         }
 
-        public List<List<int>> GetFinalState(List<List<int>> currentState, int attempts = 300)
+        public List<List<int>> GetFinalState(List<List<int>> currentState, out bool converged, int attempts = 300)
         {
+            converged = false;
+
             for (int i = 0; i < attempts; i++)
             {
                 var next = GetNextState(currentState);
-
-                if (EqualState(currentState, next))
+                if (AreBoardsEqual(currentState, next))
                 {
+                    converged = true;
                     return next;
                 }
-
                 currentState = next;
             }
 
             return currentState;
-        }
-
-        private bool EqualState(List<List<int>> currentState, List<List<int>> next)
-        {
-            if (currentState.Count != next.Count) return false;
-
-            for (int i = 0; i < currentState.Count; i++)
-            {
-                if (currentState[i].Count != next[i].Count) return false;
-
-                for (int j = 0; j < currentState[i].Count; j++)
-                {
-                    if (currentState[i][j] != next[i][j]) return false;
-                }
-            }
-
-            return true;
         }
     }
 }

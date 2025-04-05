@@ -56,7 +56,7 @@ namespace GameOfLife.Api.Controllers
             if (!_boardStore.TryGetValue(id, out var board))
                 return NotFound();
 
-            var finalState = _service.GetFinalState(board.State);
+            var finalState = _service.GetFinalState(board.State, out bool converged);
 
             return Ok(finalState);
         }

@@ -23,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameOfLife.Api\GameOfLife.Api.csproj" />
+    <ProjectReference Include="..\..\src\GameOfLife.Api.csproj" />
+    <ProjectReference Include="..\..\common\common.csproj" />
+    <Compile Include="..\Data\TestBoards.cs" />
   </ItemGroup>
 
 </Project>
